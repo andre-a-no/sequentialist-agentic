@@ -14,8 +14,8 @@
 ## 🚀 Быстрый старт
 
 ```bash
-pip install -e .
-python examples/basic_search_agent.py
+pip install -e .          # потянет ядро sequential-search-core из GitHub
+python examples/search_agent_demo.py
 ```
 
 ## 🏗 Архитектура

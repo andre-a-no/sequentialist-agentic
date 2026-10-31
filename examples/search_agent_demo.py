@@ -115,7 +115,7 @@ def main() -> None:
     print(f"Шагов:     {result.steps}, стоимость: {result.spent_cost:.0f}, "
           f"остаток бюджета: {traversal.budgets.cost_left:.0f}")
     stat = result.evidence.stat
-print(f"Улики:     e-value={result.evidence.e:.3f}" + (f" (logLR={stat:.3f})" if stat is not None else ""))
+    print(f"Улики:     e-value={result.evidence.e:.3f}" + (f" (logLR={stat:.3f})" if stat is not None else ""))
     for h in result.history:
         print(f"  - {h['edge']}: t={h['t']} e={h['e_value']} -> {h['decision']}")
 

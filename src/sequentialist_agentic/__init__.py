@@ -1,6 +1,6 @@
 """Sequentialist Agentic: Statistically guaranteed AI agent decisions.
 
-Надстройка над ядром sequential-search (пакет `sequential_search`): узлы =
+Надстройка над ядром sequential-search (пакет `sequentialist_agentic`): узлы =
 инструменты агента, рёбра = статистические правила остановки, обход =
 cost-aware стратегия с глобальным бюджетом α.
 """
