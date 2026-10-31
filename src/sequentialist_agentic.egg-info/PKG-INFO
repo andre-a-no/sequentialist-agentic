@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: sequentialist-agentic
+Version: 0.1.0
+Summary: Statistically guaranteed decision-making for AI agents
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: typing-extensions>=4.0.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+
+# Sequentialist Agentic
+
+Математически обоснованное управление решениями ИИ-агентов на базе ядра [sequential-search](https://github.com/andre-a-no/sequential-search).
+
+## 🎯 Идея
+Современные фреймворки ИИ-агентов (ReAct, Tree of Thoughts, RAG) часто полагаются на эвристики для остановки: лимиты шагов (`max_steps`) или ненадёжную самооценку LLM.
+
+Этот проект адаптирует строгое статистическое ядро `sequential-search` для управления агентами:
+
+- **Node (Узел)** = вызов инструмента (поиск, чтение документа, запрос к LLM) с известной стоимостью (`cost`).
+- **Edge (Ребро)** = статистическое правило остановки (на основе e-values или likelihood ratios), решающее: `accept` (ответ найден), `reject` (ветка тупиковая) или `pending` (нужен ещё шаг).
+- **Гарантия**: контроль вероятности ложных выводов (FWER/FDR ≤ α) независимо от адаптивности стратегии агента.
+
+## 🚀 Быстрый старт
+
+```bash
+pip install -e .
+python examples/basic_search_agent.py
+```
+
+## 🏗 Архитектура
+Проект является надстройкой над `sequential-search` и фокусируется на:
+
+1. `nodes.py`: реализация протоколов `Node` и `Observation` для инструментов ИИ.
+2. `policies.py`: стратегии обхода, оптимизированные под стоимость токенов и время API.
