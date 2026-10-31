@@ -3,10 +3,11 @@ name = "sequentialist-agentic"
 version = "0.1.0"
 description = "Statistically guaranteed decision-making for AI agents"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
-    # В будущем здесь будет реальная ссылка на пакет sequential-search
-    # "sequential-search @ git+https://github.com/andre-a-no/sequential-search.git",
+    # Реальное математическое ядро (PyPI name: sequential-search-core).
+    # Якорь на конкретный коммит (тегов в upstream пока нет) — воспроизводимо.
+    "sequential-search-core @ git+https://github.com/andre-a-no/sequential-search.git@56ec0247314d5859eb5d9d54cc26e0f99fe83266",
     "pydantic>=2.0.0",
     "typing-extensions>=4.0.0",
 ]
