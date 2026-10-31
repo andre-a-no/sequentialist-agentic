@@ -1,5 +1,5 @@
 [project]
-name = "sequentialist-agentic"
+name = "sequential-search"
 version = "0.1.0"
 description = "Statistically guaranteed decision-making for AI agents"
 readme = "README.md"
