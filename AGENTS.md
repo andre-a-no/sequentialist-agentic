@@ -6,7 +6,7 @@ belong in sequential-search; generic rendering belongs in sequentialist-visuals.
 
 ## Read first
 
-- [README.md](README.md): current examples, installation and development-pin warning.
+- [README.md](README.md): current examples, installation and upstream revision details.
 - [docs/overview.md](docs/overview.md): use cases, limits, inputs/outputs and FAQ.
 - [llms.txt](llms.txt): curated reading index; client discovery behavior varies.
 
@@ -31,19 +31,20 @@ applications of supplied rules, not their subject soundness or arbitrary math.
 Retrieval citations identify sources, not truth. Keep domain semantics here and
 reuse the upstream algorithms instead of copying them.
 
-## Development dependency caveat
+## Upstream dependency revision
 
-The current upstream Git pin predates `sequential_search.reasoning`. The new
-reasoning example needs the matching development checkout of sequential-search;
-an ordinary installation of this repository alone does not supply that API.
-Follow the adjacent-checkout installation commands in [README.md](README.md).
-Do not silently update dependency pins or rename the distribution: current
-metadata names the distribution `sequential-search`, while Python imports are
-`sequentialist_agentic`.
+The declared upstream Git pin is
+`45fbe4cdba647b59ec3fd528cad94019cece3ba9`, which includes
+`sequential_search.reasoning`. Installing the declared dependencies supplies the
+required API. This exact commit is published on a review branch and is not yet a
+merged upstream release. An adjacent editable checkout is an optional development
+override; revalidate compatibility whenever the pin changes. Do not silently
+rename the distribution: current metadata names it `sequential-search`, while
+Python imports are `sequentialist_agentic`.
 
 ## Checks
 
-From this repository's root, after installing the matching development sources:
+From this repository's root, after installing the declared dependencies:
 
 ```bash
 python examples/search_agent_demo.py

@@ -75,7 +75,7 @@ def geometry_problem(*, midpoint_known: bool = True) -> Problem:
 
     Facts are symbolic atoms. Geometric implications are a trusted,
     application-supplied rule set; no formula parser or geometry prover is
-    implied. Requires the new reasoning API in the development search checkout.
+    implied. The declared upstream revision includes the required reasoning API.
     """
     try:
         from sequential_search.reasoning import Problem, Rule
@@ -83,8 +83,8 @@ def geometry_problem(*, midpoint_known: bool = True) -> Problem:
         if exc.name != "sequential_search.reasoning":
             raise
         raise ImportError(
-            "geometry_problem requires the development sequential-search checkout; "
-            "see README.md, 'Reasoning and retrieval examples'"
+            "geometry_problem requires the pinned sequential-search-core reasoning API; "
+            "reinstall declared dependencies; see README.md"
         ) from exc
 
     facts = {"AB=AC", "AD=AD", "D between B and C", "A not on BC"}

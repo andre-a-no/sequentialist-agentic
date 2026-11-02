@@ -4,14 +4,15 @@
 > Mathematical algorithms remain in sequential-search; this package supplies task semantics and adapters.
 
 This curated reading index does not guarantee ingestion, citation or ranking by
-an assistant, crawler or search service. The upstream pin in current metadata
-predates the new reasoning API: development examples need matching local sources.
+an assistant, crawler or search service. The declared upstream pin includes the
+reasoning API at a tested exact commit; that commit is available on a review
+branch, not yet a merged upstream release.
 
 ## Start here
 
 - [Plain-language overview and FAQ](docs/overview.md): task choice, noncoder workflow, inputs/outputs and limits.
 - [Обзор и частые вопросы на русском](docs/overview.ru.md): выбор задачи, сценарии без программирования, входы/выходы и ограничения.
-- [README](README.md): setup commands, offline examples and the dependency-pin warning.
+- [README](README.md): setup commands, offline examples and the exact dependency revision.
 - [Repository guidance](AGENTS.md): source map and proportionate verification commands.
 
 ## Examples and implementation evidence

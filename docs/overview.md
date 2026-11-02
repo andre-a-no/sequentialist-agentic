@@ -43,18 +43,21 @@ Python and the documented development dependencies.
 
 ## Run the current examples
 
-The current [package metadata](../pyproject.toml) pins an older commit of
-`sequential-search-core`, which does not contain `sequential_search.reasoning`.
-The reasoning example therefore needs the matching development checkout. With
-the repositories in adjacent directories, run from the agentic repository root:
+The current [package metadata](../pyproject.toml) pins `sequential-search-core`
+to the tested commit `45fbe4cdba647b59ec3fd528cad94019cece3ba9`, which contains
+`sequential_search.reasoning`. This commit is published on a review branch and
+is not yet a merged upstream release. From the agentic repository root:
 
 ```bash
-python -m pip install -e .
-python -m pip install --no-deps -e ../sequential-search
+python -m pip install -e '.[dev]'
 python examples/search_agent_demo.py
 python examples/reasoning_demo.py
 python -m pytest -q tests
 ```
+
+For coordinated local development, an adjacent checkout can optionally replace
+the pinned package: `python -m pip install --no-deps -e ../sequential-search`.
+Validate the examples again after changing that override.
 
 The demo prints the forward, backward and bidirectional reasoning results and a
 retrieved answer with source IDs and an inspection count. It verifies its finite
@@ -72,9 +75,9 @@ Open `reasoning-proof.html` in a browser. The page visualizes supplied records;
 it does not add a new correctness or statistical guarantee.
 
 The original [search_agent_demo.py](../examples/search_agent_demo.py) remains
-separate from the new [reasoning_demo.py](../examples/reasoning_demo.py). An
-unconditional claim that installing the published pin enables both would be
-incorrect until the dependency is coordinated with an upstream release/commit.
+separate from the new [reasoning_demo.py](../examples/reasoning_demo.py). Both
+use the declared dependency revision; no adjacent source checkout is required
+for their offline execution. Release/tag status is separate from commit availability.
 
 ## Current capabilities and limits
 

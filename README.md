@@ -39,17 +39,26 @@ The application layer now includes two finite, offline baselines in `tasks.py`:
   inspections. Source exhaustion and an inspection-budget limit are distinct.
   A cited claim is not automatically true or statistically calibrated.
 
-These examples require the new reasoning API in the **development checkout** of
-sequential-search. The existing published Git dependency pin predates that API;
-the package is not release-ready until the pin is coordinated with an upstream
-release/commit. For local development, install the adjacent working trees:
+The declared Git dependency pins sequential-search to the tested commit
+`45fbe4cdba647b59ec3fd528cad94019cece3ba9`, which includes the reasoning API.
+This commit is available on an upstream review branch, not yet a merged release.
+Installing this checkout and its declared dependencies supports both offline demos:
 
 ```bash
-python -m pip install -e .
-python -m pip install --no-deps -e ../sequential-search
+python -m pip install -e '.[dev]'
+python examples/search_agent_demo.py
 python examples/reasoning_demo.py
 python -m pytest -q tests
 ```
+
+For coordinated local development only, an adjacent editable checkout can
+replace the pinned installation:
+
+```bash
+python -m pip install --no-deps -e ../sequential-search
+```
+
+Recheck compatibility after such an override.
 
 For an optional read-only HTML view, install the adjacent visuals package and run:
 
@@ -66,7 +75,7 @@ available. No live LLM or external search service is needed for these examples.
 ## Find the documentation
 
 - [Overview and FAQ](docs/overview.md): tasks, inputs/outputs, noncoder workflow,
-  current limitations and the development dependency requirement.
+  current limitations and the exact upstream revision.
 - [Обзор и частые вопросы на русском](docs/overview.ru.md).
 - [Repository guidance](AGENTS.md): source map and proportionate check commands.
 - [Curated reading index](llms.txt): a concise entry point for readers and
