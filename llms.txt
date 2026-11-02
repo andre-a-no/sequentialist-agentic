@@ -1,0 +1,25 @@
+# sequentialist-agentic
+
+> Application software for tool-using agents, bounded source retrieval and finite reasoning examples.
+> Mathematical algorithms remain in sequential-search; this package supplies task semantics and adapters.
+
+This curated reading index does not guarantee ingestion, citation or ranking by
+an assistant, crawler or search service. The upstream pin in current metadata
+predates the new reasoning API: development examples need matching local sources.
+
+## Start here
+
+- [Plain-language overview and FAQ](docs/overview.md): task choice, noncoder workflow, inputs/outputs and limits.
+- [Обзор и частые вопросы на русском](docs/overview.ru.md): выбор задачи, сценарии без программирования, входы/выходы и ограничения.
+- [README](README.md): setup commands, offline examples and the dependency-pin warning.
+- [Repository guidance](AGENTS.md): source map and proportionate verification commands.
+
+## Examples and implementation evidence
+
+- [Reasoning and retrieval demo](examples/reasoning_demo.py): finite derivations and source-cited retrieval.
+- [Original mock agent demo](examples/search_agent_demo.py): tool actions with no live service requirement.
+- [Application tasks](src/sequentialist_agentic/tasks.py): document records, retrieval and trusted geometry rules.
+- [Evaluator interfaces](src/sequentialist_agentic/evidence.py): mock evaluator and calibration limits.
+- [Task tests](tests/test_tasks.py): executable examples and result boundaries.
+- [Public exports](src/sequentialist_agentic/__init__.py): current import API.
+- [Package metadata](pyproject.toml): actual distribution identity and pinned dependencies.

@@ -1,8 +1,9 @@
-"""Sequentialist Agentic: Statistically guaranteed AI agent decisions.
+"""Sequentialist Agentic: application tools and decision policies for agents.
 
 Надстройка над ядром sequential-search (пакет `sequentialist_agentic`): узлы =
 инструменты агента, рёбра = статистические правила остановки, обход =
-cost-aware стратегия с глобальным бюджетом α.
+cost-aware стратегия. Статистические гарантии требуют валидного процесса улик
+и обоснованного учёта бюджета; mock-оценщик таких гарантий не предоставляет.
 """
 
 from sequentialist_agentic.evidence import (
